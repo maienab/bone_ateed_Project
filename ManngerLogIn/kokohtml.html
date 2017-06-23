@@ -1,0 +1,512 @@
+<?php
+	require 'core.inc.php';
+	require 'connect.inc.php';
+	require 'loadStudentListIntoText.inc.php';
+	require 'loadScheduleTable.inc.php';
+?>
+
+<html lang="he">
+<head >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="style.css" rel="stylesheet" />
+  <script type = "text/javascript" src = "javaFunction.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+<!--      ----------------------------------------------------------nav bar --->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right">
+	   <li><a href="#" onclick="pay()"  > ??"?</a></li>
+      <li><a href="#" onclick="Schedule()"  >????? ????</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">????????<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"   onclick="loadStudentForm()">???? ??????</a></li>
+          <li><a href="#">????? ????????</a></li>
+        </ul>
+      </li>
+    
+
+
+	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">??????<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#"   onclick="examsTbl()"   >??? ??????</a></li>
+          <li><a href="#"   onclick="gradesTbl()"  >???????</a></li>
+        </ul>
+      </li>
+ 
+	
+	
+	
+	  
+	  
+	  
+	  
+	  
+    
+	<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">??????<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" onclick="inbox()" >???? ????</a></li>
+          <li><a href="#"   onclick="sendMassege()">??? ?????</a></li>
+        </ul>
+      </li>
+ 
+	</ul>
+	<ul class="nav navbar-nav navbar-left">
+      <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> log out</a></li>
+	  <li><a href="#">????</a></li>
+	</ul>
+  </div>
+</nav>
+<!-- End  -------------------------------------------------------------------------------------nav bar --->
+  
+  
+<div class="container">
+	<!--  Schedule form---------------------------------------------------------------------------------->
+	<span id="ScheduleSpan"   style="display:none;>
+		<div class="row1">
+			
+			<div class="col-sm-8"> 
+			<table class="table table-bordered">
+				<h3>????? ????</h3>
+				<br></br>
+				<thead>
+					<tr>
+						<th>????</th>
+						<th>???</th>		        
+						<th>?? ????</th>
+						<th>???</th>
+					</tr>
+				</thead>
+					<tbody id="myTable"></tbody>
+				</table>
+			</div><!-- for col 8sm-->
+			<div class="col-sm-4">
+				<form action="scheduleTableForm.php" method="POST">
+					<h3>???? ???? ?????? ????</h3> 
+					<p>
+					???<br>
+					<input type="text" name="dayCourse">
+					<br> 
+					?? ???? 
+					<br>
+					<input type="text" name="coruseName">
+					<br>
+					???
+					<br>
+					<input type="text" name="timeCourse">
+					<br>
+					????
+					<br>
+					<input type="text" name="coruseClass">
+					<br>
+					
+					</p>
+					<p>
+					<input type="submit" name="ADD" value="add"/>
+					<input type="submit" name="Delete" value="delete"/>
+				</form>
+			</div><!-- for col 4sm-->
+		</div><!--fro row-->
+	</span>
+	<!--  End ---------------------------------------------Schedule form--->
+	
+	
+	
+	
+	<!--  Add student form--------------------------------------------------->
+	<span id="AddStudentSpan"   style="display:none;>
+		<div class="row2">
+			<div class="col-sm-8"> <table class="table table-bordered">
+				<h3>????? ?????????</h3>
+				<br></br>
+				<thead>
+					<tr>
+						<th>password</th>
+						<th>user name</th>
+						<th>eamil</th>
+						<th>?????</th>
+						<th>??</th>		        
+						<th>?? ?????</th>
+						<th>?? ????</th>
+					</tr>
+				</thead>
+					<tbody id="studentUserTable"></tbody>
+				</table>
+			</div><!-- for col 8sm-->
+				
+				<div class="col-sm-4">
+					<form action="studentUsers.php" method="POST">
+						<h3>???? ?????? ???</h3> 
+						<p>
+						user name<br>
+						<input type="text" name="userName">
+						<br> 
+						password
+						<br>
+						<input type="text" name="pass">
+						<br>
+						?? ????
+						<br>
+						<input type="text" name="FirstName">
+						<br>
+						?? ?????
+						<br>
+						<input type="text" name="LastName">
+						<br>
+						??
+						<br>
+						<input type="text" name="idNum">
+						<br>
+						email
+						<br>
+						<input type="text" name="studentMail">
+						<br>
+						??????
+						<br>
+						<input type="text" name="studentphone">
+						<br>
+						</p>
+						<p>
+						<input type="submit" name="studentAdd" value="add student"/>
+					</form>
+				</div> 
+			</div>
+		</span>
+		<!--  End add student form------------------------------------------------------------>
+		
+		<!-- massege - form--------------------------------------------->
+		<span id="MassegeSpan"   style="display:none;><!--start span -->
+			<div class="row3"><!--row3 div-->
+				
+				<div class="col-sm-4">
+				<form action="massege.php" method="POST" >
+				From:<br>
+				<input type="text" name="from" value="????? ???? ?????">
+				<br>
+				To:<br>
+				<select   name="oneAll"onchange="selectStuden(this);">
+				<option value="allStudent">?? ?????????</option>
+				<option value="oneStudent">?????? ???</option>				
+				</select>
+				<br>
+				
+				<div >
+				<span id="userNameStudentField">
+				insert student UserName:<br>
+				<input type="text" name="To" >
+				<br>
+				</span>
+				</div>
+				<br><br>
+				<input type="checkbox" name="Email"  value="email"> ??? ????? ????<br>
+				<input type="checkbox" name="SMS" value="sms"> SMS ???<br>
+				<input type="checkbox" name="SysteMassege" value="system" >  ??? ????? ????<br>
+				<br>
+				Subject : <br>
+				<input type="text" name="subject">
+				<br><br>
+				<textarea name="myTextarea" rows="4" cols="50">
+				</textarea>
+
+				<br><br>
+				<input type="submit" value="Submit">
+				</form> 
+				</div>
+				
+			</div><!--end row 3 div-->
+		</span><!---end span->
+		<!-- END  massege - form--------------------------------------------->
+
+		<!-- greads time - form--------------------------------------------->
+		<span id="ExamSchedule"   style="display:none;><!--start span -->
+			<div class="row4">
+				<div class="col-sm-10">
+				<!-- season 1 table------------------------------------------->
+				<div style="text-align: center;    font-size:36px;;">???? ?<br><br></div> 	
+				<table class="table table-bordered">
+				<thead>
+				<tr>
+					<th>?? ?????</th>
+					<th>?? ?????</th>
+					<th>???</th>
+					<th>?????</th>
+					<th>????</th>
+					<th>????</th>
+				</tr>
+				</thead>
+				<tbody id="season1"></tbody>
+				</table>
+				<br><br><br>	
+				<!-- season 2 table------------------------------------------->
+				<div style="text-align: center; font-size:36px;;"> ???? ?<br><br></div> 
+				<table class="table table-bordered">
+				<thead>
+				<tr>
+					<th>?? ?????</th>
+					<th>?? ?????</th>
+					<th>???</th>
+					<th>?????</th>
+					<th>????</th>
+					<th>????</th>
+				</tr>
+				</thead>
+				<tbody id="season2"></tbody>
+				</table>
+				<!-- season 3 table------------------------------------------->
+				<div style="text-align: center;    font-size:36px;;">???? ?<br><br></div> 
+				<table class="table table-bordered">
+				<thead>
+				<tr>
+						<th>?? ?????</th>
+						<th>?? ?????</th>
+						<th>???</th>
+						<th>?????</th>
+						<th>????</th>
+						<th>????</th>
+				</tr>
+				</thead>
+				<tbody id="season3"></tbody>
+				</table>
+			
+			</div>				
+				
+				<div class="col-sm-2" >		
+					
+					<form action="examsGrades.php" method="POST" >
+						<br><br><br>					
+						?? ?????
+						<br>
+						<input type="text" name="courseName" >
+						<br>
+						?? ?????
+						<br>
+						<input type="text" name="lecturerName">
+						<br>
+						???  
+						<br>						
+						<input type="time" name="time">
+						<br>
+						????? 
+						<br>
+						<input type="date" name="date">
+						<br>
+						???? ???? 
+						<br>
+						<input type="text" name="classNum">
+						<br>
+						????
+						<br>
+						<select name="examSeason">
+							<option value="1">?</option>
+							<option value="2">?</option>
+							<option value="3">?</option>
+						</select>
+						<br><br>
+						<input type="submit" name="ADD" value="add"/>
+						<input type="submit" name="Delete" value="delete"/>
+					</form> 
+				</div>
+			</div> <!--end row 4-------->
+		</span><!---end span->
+		<!-- END  grades time` - form--------------------------------------------->
+		
+		<!-- studentGreads - schudele--------------------------------------------->
+		<span id="studentGreads"   style="display:none;><!--start span -->
+		<div class="row5"><!--row3 div-->	
+				<div class="col-sm-12">
+			 	<table class="table table-bordered">
+				<thead>
+				<tr>
+					<th>??? ???????</th>
+					<th>?? ?????</th>
+					<th>?"?</th>
+					<th>?? ?????</th>
+					<th>?? ????</th>
+				</tr>
+				</thead>
+				<tbody id="studentGresdTableBody"></tbody>
+				</table>
+				</div>
+		</div><!--end row 5 div-->
+		</span><!---end span->
+		<!-- END  studentGreads - schudele--------------------------------------------->
+		
+		
+			<!-- studentGreads - schudele--------------------------------------------->
+		<span id="ListGrads"   style="display:none;><!--start span -->
+		<div class="row6"><!--row3 div-->	
+				
+				<div class="col-sm-10" >		
+					<table class="table table-bordered">
+					<thead>
+					<tr>
+						<th>????</th>
+						<th>?? ?????</th>
+					</tr>
+					</thead>
+					<tbody id="listGrdsStu"></tbody>
+					</table>
+				</div>
+		
+				<div class="col-sm-2" >		
+		
+					<form name="formGreadd" action="StudetCourseGreads.php" method="POST" >
+						
+						<input type="radio" name="stuname" value="" id="myRadio"   checked> Student 					
+						<br>
+						?? ?????
+						<br>
+						<input type="text" name="courseName" >
+						<br>
+						????
+						<br>
+						<input type="text" name="gread">
+						<br>
+						<br><br>
+						<input type="submit" name="ADD" value="add"/>
+						<input type="submit" name="Delete" value="delete"/>
+					</form> 
+				</div>
+		
+		</div><!--end row 6 div-->
+		</span><!---end span->
+		<!-- END  studentGreads - schudele--------------------------------------------->
+		
+	
+			<!-- studentGreads - schudele--------------------------------------------->
+		<span id="inboxSpan"   style="display:none;><!--start span -->
+		<div class="row7"><!--row3 div-->	
+				
+				<div class="col-sm-12" >	
+					<center><h3> ???? ????</h3></center>
+					<span id ="inboxDiv">	</span>						
+				</div>
+		
+		</div><!--end row 6 div-->
+		</span><!---end span->
+		<!-- END  studentGreads - schudele--------------------------------------------->
+		
+		
+		
+		
+		
+		
+	<span id="paySpan"   style="display:none;><!--start span -->
+	<div class="row8"><!--row3 div-->	
+		<center><h3> ??? ????? </h3></center>
+		<div class="col-sm-12" >	
+		<table class="table table-striped">
+			<thead>
+			<tr>
+			<th>??</th>
+			<th>?"?</th>
+			<th>?? ?????</th>
+			<th>??? ?????</th>
+			<th>???</th>
+			<th>???? ???</th>
+			</tr>
+			</thead>
+			<tbody id="paysTbl"></tbody>
+		</table>		
+		</div>
+	</div><!--end row 6 div-->
+	</span><!---end span->
+		<!-- END  studentGreads - schudele--------------------------------------------->
+	
+		<span id="StudentpaySpan"   style="display:none;><!--start span -->
+		<div class="row8"><!--row3 div-->	
+				<center><h3> ??? ????? </h3></center>
+				<div class="col-sm-12" >
+				<form action="pay.php" method="POST">
+					student user Name: <br>
+					<input type='text' name='stuName'></input><br>
+					????? :<br>
+					<input type="date" name="date" ><br>
+					??? ??????? : <br>
+					<select name="typePays">
+					<option value="cash">?????</option>
+					<option value="visa">????? ?????</option>
+					<option value="chik">???</option>
+					</select>
+					<br><br>
+					???? : <br>
+					<input type="text" name="amont" >?"?<br>
+					????? ?????? : <br>			
+					<textarea name="text" rows="4" cols="50">			
+					</textarea><br>
+					<input type="submit">
+				</form>
+				</div>
+		</div><!--end row 6 div-->
+		</span><!---end span->
+		<!-- END  studentGreads - schudele--------------------------------------------->
+		
+		
+			
+	<span id="DeptSpan"   style="display:none;><!--start span -->
+	<div class="row8"><!--row3 div-->	
+		<center><h3> ???? ??? ???? ??????</h3></center>
+		<div class="col-sm-12" >	
+				<form action="dept.php"  method="POST">
+					student user Name: <br>
+					<input type='text' name='stuName'></input><br>
+					????? :<br>
+					<input type="date" name="date" ><br>
+					???? :<br>
+					<input type="text" name="amont" >?"?<br>
+					????? ?????? : <br>			
+					<textarea name="text"rows="4" cols="50">			
+					</textarea><br>
+					<input type="submit">
+				</form>
+		</div>
+	</div><!--end row 6 div-->
+	</span><!---end span->
+		<!-- END  studentGreads - schudele--------------------------------------------->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+	<span id="paysTablesSpan"   style="display:none;><!--start span -->
+	<div class="row8"><!--row3 div-->	
+		<center><h3> ????? ?????</h3></center>
+		<div class="col-sm-12" >
+		<table class="table table-striped">
+			<thead>
+			<tr>
+			<th>?????</th>
+			<th>?????</th>
+			<th>????</th>
+			<th>????? ?????</th>
+			</tr>
+			</thead>
+			<tbody id="paysTblSpan"></tbody>
+		</table>				
+		</div>
+	</div><!--end row 6 div-->
+	</span><!---end span->
+		<!-- END  studentGreads - schudele--------------------------------------------->
+		
+		
+		
+		
+		
+		</div>  <!--div class="container">-->
+
+</body>
+</html>

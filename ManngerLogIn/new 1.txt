@@ -1,0 +1,46 @@
+	<!-- massege - form--------------------------------------------->
+		<span id="MassegeSpan"   style="display:none;><!--start span -->
+			<div class="row3"><!--row3 div-->
+				
+				<div class="col-sm-4">
+				<form action="massege.php" method="POST" >
+				From:<br>
+				<input type="text" name="from" value="מכללת בוני העתיד">
+				<br>
+				To:<br>
+				<select   name="oneAll"onchange="selectStuden(this);">
+				<option value="allStudent">כל הסטודנטים</option>
+				<option value="oneStudent">סטודנט אחד</option>				
+				</select>
+				<br>
+				
+				<div >
+				<span id="userNameStudentField">
+				insert student UserName:<br>
+				<input type="text" name="To" >
+				<br>
+				</span>
+				</div>
+				
+				
+				<br><br>
+				<input type="checkbox" name="Email"  value="email"> שלח למייל פרטי<br>
+				<input type="checkbox" name="SMS" value="sms"> SMS שלח<br>
+				<input type="checkbox" name="SysteMassege" value="system" >  שלח בתחנת מידע<br>
+				<br>
+				Subject : <br>
+				<input type="text" name="subject">
+				<br><br>
+				<textarea name="myTextarea" rows="4" cols="50">
+				</textarea>
+
+				<br><br>
+				<input type="submit" value="Submit">
+				</form> 
+				</div>
+				
+			</div><!--end row 3 div-->
+		</span><!---end span->
+
+
+		<!-- END  massege - form--------------------------------------------->

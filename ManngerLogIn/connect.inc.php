@@ -18,7 +18,7 @@ if (!$conn){
 		
 	} 
 else{
-	echo('connected!!');
+	echo('');
 }
 
 ?>

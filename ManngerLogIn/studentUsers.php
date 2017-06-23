@@ -44,6 +44,50 @@
 	else {
     echo "Error creating table: " . $conn->error;
 	}
+	
+
+
+	
+			
+	$_tableName=$_name."_message";
+			
+			// sql to create table
+	// here we create a _message table for the new student that we add 
+	$sql = "CREATE TABLE $_tableName (
+	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	date date,
+	time time ,
+	subject	text,
+	text text)";
+
+	if (mysql_query( $sql, $conn )=== TRUE) {
+		echo "Table MyGuests created successfully";
+	} 
+	else {
+    echo "Error creating table: " . $conn->error;
+	}
+	
+
+
+$_tableName=$_name."_pays";
+			
+			// sql to create table
+	// here we create a _message table for the new student that we add 
+	$sql = "CREATE TABLE $_tableName (
+	id INT(11) ,
+	typePays	varchar(20)	,
+	date date,
+	amout	int(11) ,
+	details	text,
+	plusMunis	varchar(20))";
+
+	if (mysql_query( $sql, $conn )=== TRUE) {
+		echo "Table MyGuests created successfully";
+	} 
+	else {
+    echo "Error creating table: " . $conn->error;
+	}
+	
 			
 	echo '<script language="javascript">';
 	echo 'alert("student created successfully . refresh the page to see the change")';

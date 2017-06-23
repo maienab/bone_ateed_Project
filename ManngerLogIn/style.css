@@ -1,0 +1,97 @@
+#studentGresdTableBody{
+	   background-color: #f5f5ef;
+}
+#studentUserTable {
+    background-color: #f5f5ef;
+}
+#season2 {
+    background-color: #f5f5ef;
+}
+
+#season1 {
+    background-color: #f5f5ef;
+}
+
+#season3 {
+    background-color: #f5f5ef;
+}
+
+
+#paysTbl {
+    background-color: #f5f5ef;
+}
+#myTable {
+    background-color: #f5f5ef;
+}
+.botn1{
+	width: 100%;
+}
+.inboxBack{
+   background-color: lightgrey;
+    padding: 25px;
+    margin: 25px;
+	direction: rtl;
+
+}
+.navbar {
+	top : 50px;
+    padding : 30px;
+	margin-left:170px;
+	margin-right:170px;
+
+} 
+
+ img{
+	position: absolute;
+    right:0px;
+    top: 0px;
+	z-index: -1;
+ }
+ 
+.contactUS{
+	border-style: inset;
+    margin-top: 4cm;
+    padding : 30px;
+	margin-left:170px;
+	margin-right:170px;
+
+} 
+.lft {
+	float: left;
+}
+.rit {
+	float: right;
+}
+.title{
+
+	color: #1a8cff;
+	text-align : center;
+    font-size: 200%;
+	padding-top: 20px;
+ }
+ .nav > li > a {
+font-size:      1.5em;
+ color: #666666;
+
+}
+
+.nav > li > a:hover {
+color:blue;
+}
+
+body {
+	
+    background-image: url("images\back.jpg");
+	 	background-size: 100% 100%;
+    background-position: 0% 83%;
+	
+
+	
+  
+}
+
+
+ScheduleSpan {
+    direction: rtl;
+}
+

@@ -1,0 +1,73 @@
+.inboxBack{
+   background-color: lightgrey;
+    padding: 25px;
+    margin: 25px;
+	direction: rtl;
+
+}
+
+.title{
+
+	color: #1a8cff;
+	text-align : center;
+    font-size: 200%;
+	padding-top: 20px;
+ }
+ 
+ 
+ img{
+	position: absolute;
+    right:0px;
+    top: 0px;
+	z-index: -1;
+ }
+
+.timeInbox{
+    direction: ltr;
+
+}
+
+.navbar {
+	top : 50px;
+    padding : 30px;
+	margin-left:170px;
+	margin-right:170px;
+
+} 
+.botn1{
+	width: 100%;
+}
+
+.formMas{
+
+}
+
+
+.lft {
+	float: left;
+}
+.rit {
+	float: right;
+}
+
+
+ .nav > li > a {
+font-size:      1.5em;
+ color: #666666;
+
+}
+
+.nav > li > a:hover {
+color:blue;
+}
+
+
+
+.contactUS{
+	border-style: inset;
+    margin-top: 4cm;
+    padding : 30px;
+	margin-left:170px;
+	margin-right:170px;
+
+} 

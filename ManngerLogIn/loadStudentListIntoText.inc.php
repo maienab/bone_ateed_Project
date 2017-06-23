@@ -59,7 +59,9 @@ while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
 $myfile = fopen("studentUsersLists.txt", "w") or die("Unable to open file!");
 $result=count($phoneArray);
 for($i=0 ; $i<$result ; $i++){
-$txt = "<tr><td>'$passwordArray[$i]'</td><td>'$userNameArray[$i]'</td><td>'$mailArray[$i]'</td><td>'$phoneArray[$i]'</td><td>'$idNumArray[$i]'</td><td>'$lastNameArray[$i]'</td><td>'$firstNameArray[$i]'</td></tr>\n";
+	  
+$txt = "<tr><td>'$passwordArray[$i]'</td><td>'$userNameArray[$i]'</td><td>'$mailArray[$i]'</td><td>'$phoneArray[$i]'</td><td>'$idNumArray[$i]'</td><td>'$lastNameArray[$i]'</td><td>'$firstNameArray[$i]'</td><td><button class='btn btn-danger' type='button' id='$userNameArray[$i]' onClick=deleteStudent(this.id)>"."delete student"."</button>
+</td></tr>\n";
 fwrite($myfile, $txt);
 }
 

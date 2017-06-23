@@ -1,19 +1,37 @@
-#Future Buildiers college WebSite
+# [Start Bootstrap](http://startbootstrap.com/) - [Agency](http://startbootstrap.com/template-overviews/agency/)
 
+[Agency](http://startbootstrap.com/template-overviews/agency/) is a one page agency portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, a responsive timeline, and a working PHP contact form.
 
+## Getting Started
 
-![logo2](https://cloud.githubusercontent.com/assets/17568337/22838324/518c45d2-efcd-11e6-965f-c685eb028646.png)
-##More Info :
+Several options are available to get started quickly:
+* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/agency/)
+* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-agency.git`
+* Fork the repo
 
-The  purposeof this project is to build a marketing and managerial website for the Future Builders College. This college in its early stages  , is engaged in locating customers. In this college teaches unique assistant courses completion of “Bagrot” exams, psychometric studies, authorized exterminator course, and insurance agents. 
-Today, almost every educational institution has media  communication which the public can be reached the college. The Builders of the Future College has no official website which make it impossible to communicate and register online, so this proposal will discuss the construction of a website that answers the requirements of site visitors, students and administrators.  
-  
-35   
-The system is divided into three main parts , the first part it's the Homepage, The main page will contain all the information about the college for the public needs, all the information that the college teaches, so that it enables them to be impressed by the course at the college, and allows them to register by sending a message to the college, the second part it's the Manager Page , This page allows the administrator to make updates and changes in the system, allows a number of options such as building the Schedule, marks, exam board, sending messages through the system and through the email, handling students' requests, adding students to the system , the third part it's the Student page , contains personal information for each student, such as a marks, exams board, a message to the administration, Schedule,  view pays, each student has a user name and password. 
+## Developing Using Source Files
 
+To use the source files, you will need to have npm installed globally along with Gulp.js. To start:
+* Run `npm install` in the root directory
+* Run `gulp dev` and edit the files as needed
 
+If you need to update the plugins included with this template, simply run the following tasks:
+* First run `npm update` to update the dependencies
+* Then run `gulp copy` to copy the new versions to their proper destinations
 
+## Bugs and Issues
 
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-agency/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/agency/).
 
+## Creator
 
+Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
 
+* https://twitter.com/davidmillerskt
+* https://github.com/davidtmiller
+
+Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+
+## Copyright and License
+
+Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-agency/blob/gh-pages/LICENSE) license.
