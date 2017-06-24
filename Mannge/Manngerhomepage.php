@@ -1,3 +1,7 @@
+
+<!--mannger home page --->
+
+
 <?php
 	require 'core.inc.php';
 	require 'connect.inc.php';
